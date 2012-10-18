@@ -27,8 +27,8 @@ public void onCreate(Bundle savedInstanceState)
 	
 	Button gpsbutton = (Button) findViewById(R.id.button1);
 	gpsbutton.setOnClickListener(new View.OnClickListener(){
-    	public void onClick(View view){
-    		Location loc = null;
+    	public void onClick(View view, Location loc){
+    		//Location loc = null;
     		loc.getLatitude();
     		loc.getLongitude();
     		String Text = "My current location is: " + "Latitude = " + loc.getLatitude() + "Longitude = " + loc.getLongitude();
@@ -36,7 +36,14 @@ public void onCreate(Bundle savedInstanceState)
     		
     		
     		
-    	}});
+    		
+    	}
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			
+		}});
 
 
 }
@@ -55,7 +62,7 @@ public class MyLocationListener implements LocationListener
 
 	loc.getLatitude();
 	loc.getLongitude();
-	String Text = "My current location is: " + "Latitude = " + loc.getLatitude() + "Longitude = " + loc.getLongitude();
+	String Text = "My current location is (2): " + "Latitude = " + loc.getLatitude() + "Longitude = " + loc.getLongitude();
 	Toast.makeText( getApplicationContext(), Text, Toast.LENGTH_SHORT).show();
 
 }
